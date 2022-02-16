@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.main {
+    margin: 10vh 0;
+}
+
+.result {
+    margin: 0 15px;
+    font-size: 60px;
+}
+
+.history {
+    height: 30px;
+    margin: 0 40px;
+    font-size: 20px;
+}
+
+.button {
+   width: 100px; 
+   height: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   aspect-ratio: 1;
+   transition: 200ms;
+   font-size: 25px;
+}
+
+.button:hover {
+    background-color: var(--color4);
+    color: var(--color3);
+    transform: scale(1.01);
+}
+
+.bg-1 {
+    background-color: var(--color2);
+}
+
+.bg-2 {
+    background-color: var(--color3);
+}
+
+.flex-right {
+    display: flex;
+    gap: 3px;
+}
+
+.flex-down {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.on-right {
+    align-self: flex-end;
+}
+
+:root {
+    --color1: #2C3333;
+    --color2: #395B64;
+    --color3: #2666CF;
+    --color4: #F5F2E7;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color1);
+    color: var(--color4);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+* {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}

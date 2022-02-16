@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Boga's Calculator</title>
-    <link rel="stylesheet" href="index/css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <div class="main flex-down">
+        <div class="history on-right">test</div>
+        <div class="result on-right">0</div>
+        <div class="flex-right">
+            <div class="button bg-2" data-operation="clear">C</div>
+            <div class="button bg-2" data-operation="delete">⌫</div>
+            <div class="button bg-2" data-operation="percentage">%</div>
+            <div class="button bg-2" data-operation="divide">/</div>
+        </div>
+        <div class="flex-right">
+            <div class="button bg-1" data-isNumber="yes" data-number="7">7</div>
+            <div class="button bg-1" data-isNumber="yes" data-number="8">8</div>
+            <div class="button bg-1" data-isNumber="yes" data-number="9">9</div>
+            <div class="button bg-2" data-operation="multiply">X</div>
+        </div>
+        <div class="flex-right">
+            <div class="button bg-1" data-isNumber="yes" data-number="4">4</div>
+            <div class="button bg-1" data-isNumber="yes" data-number="5">5</div>
+            <div class="button bg-1" data-isNumber="yes" data-number="6">6</div>
+            <div class="button bg-2" data-operation="subtract">-</div>
+        </div>
+        <div class="flex-right">
+            <div class="button bg-1" data-isNumber="yes" data-number="1">1</div>
+            <div class="button bg-1" data-isNumber="yes" data-number="2">2</div>
+            <div class="button bg-1" data-isNumber="yes" data-number="3">3</div>
+            <div class="button bg-2" data-operation="add">+</div>
+        </div>
+        <div class="flex-right">
+            <div class="button bg-1" style="flex-grow: 1;" data-isNumber="yes" data-number="0">0</div>
+            <div class="button bg-2" data-isNumber="yes" data-number=".">.</div>
+            <div class="button bg-2" data-operation="sum">=</div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>
