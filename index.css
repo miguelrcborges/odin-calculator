@@ -21,7 +21,6 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   aspect-ratio: 1;
    transition: 200ms;
    font-size: 25px;
 }
