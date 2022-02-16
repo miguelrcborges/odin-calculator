@@ -193,5 +193,27 @@ function main(input) {
             isSum = false;
             resultBox.textContent = resultBox.textContent.length > 1 ? resultBox.textContent.slice(0,-1) : 0;
             break
+        
+        case "percentage":
+            // Copy pasted the code form sum cause I'm tired, more lines but doesn't add complexity. Need to multiply by hundred.
+            if (isSum) return
+            isSum = true;
+            if (!cacheOperation) cacheOperation = "add";
+            historyBox.textContent += " " + resultBox.textContent;
+            resultBox.textContent = (operations[cacheOperation].function(cacheSum, parseFloat(resultBox.textContent)) * 100);
+            if (resultBox.textContent.length > 10) {
+                let temp = resultBox.textContent.split("e");
+                let significativeNumbers = temp[0].split(".")
+                console.log(1)
+                if (significativeNumbers[0].length >= 7) {
+                    resultBox.textContent = resultBox.textContent.slice(0,7) + "e" + (significativeNumbers[0].length - 7 + (parseInt(temp[1]) ? parseInt(temp[1]) : 0));
+                } else {
+                    console.log(significativeNumbers)
+                    resultBox.textContent = significativeNumbers[0] + "." + significativeNumbers[1].slice(0, 6 - significativeNumbers[0].length) + (temp[1] ? "e" + temp[1] : "");
+                }
+            } 
+            cacheSum = 0;
+            cacheOperation = null;
+            break;
     }
 }
