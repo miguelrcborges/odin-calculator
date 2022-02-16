@@ -129,7 +129,7 @@ const operate = (a, b, operation) => operations[operation](a, b)
 const clickHandler = (event) => main( event.target.dataset.isnumber ? {isNumber: true, number: event.target.dataset.number } : { operation: event.target.dataset.operation});
 
 document.querySelectorAll('.button').forEach((button) => button.addEventListener('click', clickHandler));
-document.addEventListener('keydown', (event) => keys[event.key] ? main(keys[event.key]) : console.log(event))
+document.addEventListener('keydown', (event) => keys[event.key] ? main(keys[event.key]) : undefined);
 
 
 
@@ -169,11 +169,9 @@ function main(input) {
             if (resultBox.textContent.length > 10) {
                 let temp = resultBox.textContent.split("e");
                 let significativeNumbers = temp[0].split(".")
-                console.log(1)
                 if (significativeNumbers[0].length >= 7) {
                     resultBox.textContent = resultBox.textContent.slice(0,7) + "e" + (significativeNumbers[0].length - 7 + (parseInt(temp[1]) ? parseInt(temp[1]) : 0));
                 } else {
-                    console.log(significativeNumbers)
                     resultBox.textContent = significativeNumbers[0] + "." + significativeNumbers[1].slice(0, 6 - significativeNumbers[0].length) + (temp[1] ? "e" + temp[1] : "");
                 }
             } 
@@ -204,11 +202,9 @@ function main(input) {
             if (resultBox.textContent.length > 10) {
                 let temp = resultBox.textContent.split("e");
                 let significativeNumbers = temp[0].split(".")
-                console.log(1)
                 if (significativeNumbers[0].length >= 7) {
                     resultBox.textContent = resultBox.textContent.slice(0,7) + "e" + (significativeNumbers[0].length - 7 + (parseInt(temp[1]) ? parseInt(temp[1]) : 0));
                 } else {
-                    console.log(significativeNumbers)
                     resultBox.textContent = significativeNumbers[0] + "." + significativeNumbers[1].slice(0, 6 - significativeNumbers[0].length) + (temp[1] ? "e" + temp[1] : "");
                 }
             } 
