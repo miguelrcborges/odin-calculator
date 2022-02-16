@@ -18,6 +18,109 @@ const operations = {
     },
 }
 
+const keys = {
+    0: {
+        isNumber: true,
+        number: "0",
+    },
+
+    1: {
+        isNumber: true,
+        number: "1",
+    },
+
+    2: {
+        isNumber: true,
+        number: "2",
+    },
+
+    3: {
+        isNumber: true,
+        number: "3",
+    },
+
+    4: {
+        isNumber: true,
+        number: "4",
+    },
+
+    5: {
+        isNumber: true,
+        number: "5",
+    },
+
+    6: {
+        isNumber: true,
+        number: "6",
+    },
+
+    7: {
+        isNumber: true,
+        number: "7",
+    },
+
+    8: {
+        isNumber: true,
+        number: "8",
+    },
+
+    9: {
+        isNumber: true,
+        number: "9"
+    },
+
+    c: {
+        operation: "clear"
+    },
+
+    Backspace: {
+        operation: "delete"
+    },
+
+    "%": {
+        operation: "percentage"
+    },
+
+    "/": {
+        operation: "divide"
+    },
+
+    "*": {
+        operation: "multiply"
+    },
+
+    x: {
+        operation: "multiply"
+    },
+
+    "-": {
+        operation: "subtract"
+    },
+
+    "+": {
+        operation: "add"
+    },
+
+    "=": {
+        operation: "sum"
+    },
+
+    Enter: {
+        operation: "sum"
+    },
+
+    ".": {
+        isNumber: true,
+        number: "."
+    },
+
+    ",": {
+        isNumber: true,
+        number: "."
+    }
+
+}
+
 const resultBox = document.querySelector(".result");
 const historyBox = document.querySelector(".history")
 
@@ -26,6 +129,8 @@ const operate = (a, b, operation) => operations[operation](a, b)
 const clickHandler = (event) => main( event.target.dataset.isnumber ? {isNumber: true, number: event.target.dataset.number } : { operation: event.target.dataset.operation});
 
 document.querySelectorAll('.button').forEach((button) => button.addEventListener('click', clickHandler));
+document.addEventListener('keydown', (event) => keys[event.key] ? main(keys[event.key]) : console.log(event))
+
 
 
 let cacheSum = 0;
