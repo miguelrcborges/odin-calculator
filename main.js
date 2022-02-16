@@ -36,6 +36,7 @@ function main(input) {
     if (input.isNumber) {
         if (resultBox.textContent === "0" || isSum) { 
             resultBox.textContent = input.number; 
+            if (isSum) historyBox.textContent = "";
             isSum = false;
         }
         else if (resultBox.textContent.length === 10) return;
@@ -44,6 +45,7 @@ function main(input) {
         return
     }
     if (operations[input.operation]) {
+        isSum = false;
         if (!cacheOperation) cacheOperation = "add";
         cacheSum = operations[cacheOperation].function(cacheSum, parseFloat(resultBox.textContent));
         historyBox.textContent = cacheSum + " " + operations[input.operation].symbol;
